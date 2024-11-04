@@ -1,0 +1,18 @@
+<h1>Discussões</h1>
+
+<form (ngSubmit)="addComment()">
+  <label for="name">Nome:</label>
+  <input type="text" id="name" [(ngModel)]="name" name="name" required>
+
+  <label for="message">Mensagem:</label>
+  <textarea id="message" [(ngModel)]="message" name="message" required></textarea>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<h2>Comentários</h2>
+<div *ngFor="let comment of comments">
+  <strong>{{ comment.name }}</strong>
+  <p>{{ comment.message }}</p>
+  <hr>
+</div>
